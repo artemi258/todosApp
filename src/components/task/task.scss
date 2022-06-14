@@ -1,0 +1,111 @@
+.task {
+    width: 100%;
+    border: 1px #D7D7D7 solid;
+    box-shadow: 1px 1px 3px #D7D7D7;
+    &__arrow {
+        width: 100px;
+        height: 75px;
+        transform:rotate(90deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &::before {
+            content: '\2771';
+            font-size: 35px;
+            color: #E6E6E6;
+        }
+    }
+    &__title {
+       display: flex;
+       align-items: center;
+       height: 75px;
+       cursor: pointer;
+        h2 {
+            font-size: 40px;
+            color: #D7D7D7;
+            text-align: center;
+            font-style: italic;
+            font-weight: 100;
+        }
+    }
+    &__list {
+        border-top: 2px #F2F2F2 solid;
+        border-bottom: 2px #F2F2F2 solid;
+        ul {
+            padding: 0;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            color: #545454;
+            position: relative;
+            list-style: none;
+            padding-left: 100px;
+            font-size: 30px;
+            height: 75px;
+            font-weight: 600;
+            transition: all .4s linear;
+            cursor: pointer;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 20px;
+                border: 1px #D7D7D7 solid;
+                height: 40px;
+                width: 40px;
+                border-radius: 100%;
+                transition: all .4s linear;
+            }
+            &::after {
+                content: '✓';
+                position: absolute;
+                left: 30px;
+                opacity: 0;
+                color: green;
+                transition: all .4s linear;
+            }
+        }
+        li.task__completed {
+            text-decoration: line-through;
+            color: #D7D7D7; 
+            &::before {
+                content: '';
+                border: 1px #D9E7E4 solid;
+            }
+            &::after {
+                opacity: 1;
+            }
+        }
+        li {
+            &:not(:last-child) {
+                border-bottom: 1px #EFEFEF solid;
+            }
+        }
+    }
+    &__bottom {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 50px;
+        color: #929292;
+        font-size: 18px;
+        &-filters {
+            display: flex;
+            justify-content: space-between;
+            width: 33.33%;
+            &-active {
+                border: 1px #F5E9E9 solid !important;
+            }
+        }
+        button {
+            font-size: 18px;
+            color: #929292;
+            border: none;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        &-clear {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+* {
+    font-family: 'Roboto', sans-serif;;
+}
+
+// animation
+
+.fade-enter {
+    opacity: 0 !important;
+    transition: all 500ms linear;
+  }
+  .fade-enter-active {
+    opacity: 1 !important;
+    transition: all  500ms linear;
+  }
+  .fade-enter-done {
+    opacity: 1 !important;
+    transition: all  500ms linear;
+  }
+  .fade-exit {
+    opacity: 1 !important;
+    transition: all  500ms linear;
+  }
+  .fade-exit-active {
+    opacity: 0 !important;
+    transition: all  500ms linear;
+  }
